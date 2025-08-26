@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐺 Cyber Wolf - Free Training Course Registration Confirmation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        
+        .email-container {
+            max-width: 650px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+        
+        .wolf-icon {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 36px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .tagline {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .content { padding: 30px; }
+        
+        .congratulations {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(76, 175, 80, 0.6); }
+        }
+        
+        .countdown {
+            background: linear-gradient(135deg, #FF6B6B, #FF5252);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .countdown-timer {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 15px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .course-details {
+            background: #f8f9fa;
+            border-left: 4px solid #1a1a2e;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            line-height: 1;
+            text-align: center;
+        }
+        
+        .detail-item:hover .detail-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            color: #555;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B, #FF5252);
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+        
+        .cta-button.secondary {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            box-shadow: 0 6px 20px rgba(26, 26, 46, 0.3);
+        }
+        
+        .cta-button.calendar {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #FF6B6B;
+            box-shadow: 0 15px 40px rgba(255,107,107,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: #FF6B6B;
+        }
+        
+        .notice-board {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border: 2px solid #FF9800;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .notice-title {
+            color: #E65100;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .social-links { margin: 25px 0; }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            line-height: 1;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .social-link:hover {
+            background: #FF6B6B;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .email-container { margin: 10px; }
+            .content { padding: 20px 15px; }
+            .features { grid-template-columns: 1fr; }
+            .detail-item { flex-direction: column; text-align: center; }
+            .detail-icon { margin-right: 0; margin-bottom: 15px; }
+            .cta-button { display: block; width: 90%; margin: 10px auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="wolf-icon">🐺</span>CYBER WOLF
+            </div>
+            <div class="tagline">Master Ethical Hacking & Cybersecurity</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Congratulations Message -->
+            <div class="congratulations">
+                🎉 Congratulations! You're Successfully Registered 🎉<br>
+                <strong>Cyber Wolf – Free Web Penetration Testing Class</strong>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown">
+                <div>⏰ Course Starts In:</div>
+                <div class="countdown-timer" id="countdown">Loading...</div>
+            </div>
+            
+            <!-- Course Details -->
+            <div class="course-details">
+                <div class="detail-item">
+                    <div class="detail-icon">📚</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Event Type</div>
+                        <div class="detail-value">FREE TRAINING COURSE</div>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">🎯</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Topic</div>
+                        <div class="detail-value">Master Ethical Hacking & Cybersecurity with Industry Experts</div>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">🌐</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Mode</div>
+                        <div class="detail-value">Online (Join from anywhere)</div>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Date</div>
+                        <div class="detail-value">18th July 2025 (Friday)</div>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">⏰</div>
+                    <div class="detail-content">
+                        <div class="detail-label">Time</div>
+                        <div class="detail-value">11:00 AM – 3:00 PM IST (4 Hours)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="cta-section">
+                <a href="http://meet.google.com/twi-otot-prk" class="cta-button" target="_blank">
+                    🎥 Join Google Meet
+                </a>
+                <a href="https://cyberwolf-career-guidance.web.app/" class="cta-button secondary" target="_blank">
+                    🚀 Access Course Portal
+                </a>
+                
+                
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Expert Guidance</h3>
+                    <p>Learn from industry professionals with years of cybersecurity experience and real-world expertise</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Hands-on Practice</h3>
+                    <p>Get practical experience with real-world penetration testing scenarios and live demonstrations</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Career Boost</h3>
+                    <p>Enhance your skills and advance your cybersecurity career with industry-recognized training</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Certification</h3>
+                    <p>Receive a certificate of completion to showcase your new cybersecurity skills</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community</h3>
+                    <p>Join a network of cybersecurity professionals and continue learning together</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Tools & Resources</h3>
+                    <p>Access professional-grade tools and resources used in the cybersecurity industry</p>
+                </div>
+            </div>
+
+            <!-- Notice Board -->
+            <div class="notice-board">
+                <div class="notice-title">
+                    📢 Important Course Information
+                </div>
+                <p><strong>What to Expect in This Training:</strong></p>
+                <ul style="margin-left: 25px; margin-top: 15px;">
+                    <li>💬 Live interactive sessions with expert Q&A</li>
+                    <li>📥 Downloadable resources, tools, and study materials</li>
+                    <li>🏅 Certificate of participation upon completion</li>
+                    <li>🌐 Career guidance and networking opportunities</li>
+                    <li>🤝 Hands-on demonstrations and practical exercises</li>
+                    <li>❓ Access to course support and follow-up materials</li>
+                </ul>
+
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.7); border-radius: 8px;">
+                    <p><strong>⚠️ Pre-Course Preparation:</strong></p>
+                    <p style="margin-top: 10px; font-size: 14px;">
+                        • Ensure stable internet connection 🌐<br>
+                        • Have a notebook ready for taking notes 📝<br>
+                        • Join 5-10 minutes early for technical setup ⏰<br>
+                        • Prepare questions you'd like to ask our experts ❓
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3>🐺 Powered By Cyber Wolf Team</h3>
+            <p>Enhance your career. Boost your skills. Master cybersecurity.</p>
+            <p style="font-style: italic; margin-top: 10px;">
+                "Empowering the next generation of cybersecurity professionals"
+            </p>
+
+            <div class="social-links">
+                <a href="mailto:Cyberwolfofficials@gmail.com" class="social-link" title="Email Us">📧</a>
+                <a href="https://cyberwolf-career-guidance.web.app" class="social-link" title="Visit Website" target="_blank">🌐</a>
+                <a href="tel:+916374344424" class="social-link" title="Call Us">📱</a>
+                <a href="https://www.linkedin.com/company/cyberwolf-team/" class="social-link" title="LinkedIn" target="_blank">💼</a>
+                <a href="https://x.com/Cyber_Wolf_Team?t=1EF061Edf4viWwPWJjHXdg&s=09" class="social-link" title="Twitter" target="_blank">🐦</a>
+                
+            </div>
+
+            <div style="margin: 25px 0; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                <p><strong>Need Help? 🆘</strong></p>
+                <p style="font-size: 14px; margin-top: 8px;">
+                    📧 Technical Support: Cyberwolfofficials@gmail.com<br>
+                    📚 Course Inquiries: cyberwolffreecourse@gmail.com<br>
+                    📞 Phone Support: +91 6374344424
+                </p>
+            </div>
+
+            <div style="font-size: 12px; opacity: 0.8; margin-top: 20px;">
+                <p>© 2025 Cyber Wolf. All rights reserved.</p>
+                <p>This is an automated email. Please do not reply directly to this message.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Countdown Timer
+        function updateCountdown() {
+            const courseDate = new Date('2025-07-18T11:00:00+05:30');
+            const now = new Date();
+            const timeDiff = courseDate - now;
+            const countdownElement = document.getElementById('countdown');
+
+            if (timeDiff > 0) {
+                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                // Notifications
+                if (days === 1 && hours === 0 && minutes === 0 && seconds === 0) {
+                    showNotification('🔔 Course starts tomorrow!');
+                }
+                if (days === 0 && hours === 1 && minutes === 0 && seconds === 0) {
+                    showNotification('🚨 Course starts in 1 hour!');
+                }
+            } else {
+                countdownElement.innerHTML = '🔴 Course has started!';
+                countdownElement.style.color = '#FF5252';
+            }
+        }
+
+        // Calendar Integration
+        function addToCalendar() {
+            const startDate = new Date('2025-07-18T11:00:00+05:30').toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            const endDate = new Date('2025-07-18T15:00:00+05:30').toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+
+            const params = new URLSearchParams({
+                action: 'TEMPLATE',
+                text: 'Cyber Wolf - Free Web Penetration Testing Class',
+                dates: startDate + '/' + endDate,
+                details: 'Join the free training course on Ethical Hacking & Cybersecurity.\\n\\nMeeting Link: http://meet.google.com/twi-otot-prk\\nCourse Portal: https://cyberwolf-career-guidance.web.app/',
+                location: 'Online - Google Meet'
+            });
+
+            window.open('https://calendar.google.com/calendar/render?' + params.toString(), '_blank');
+        }
+
+        // Share Functionality
+        function shareEmail() {
+            const shareData = {
+                title: 'Cyber Wolf - Free Training Course',
+                text: 'Join me for this free Ethical Hacking & Cybersecurity training! 🐺',
+                url: 'https://cyberwolf-career-guidance.web.app/'
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData);
+            } else {
+                const subject = encodeURIComponent(shareData.title);
+                const body = encodeURIComponent(shareData.text + '\\n\\n' + shareData.url);
+                window.open('mailto:?subject=' + subject + '&body=' + body);
+            }
+        }
+
+        // Notification System
+        function showNotification(message) {
+            if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification('Cyber Wolf Training 🐺', { body: message });
+            }
+
+            // In-page notification
+            const notification = document.createElement('div');
+            notification.innerHTML = '<div style="position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); z-index: 1000; max-width: 300px;">' + message + '<button onclick="this.parentElement.remove()" style="background: none; border: none; color: white; margin-left: 15px; cursor: pointer; font-size: 18px; float: right;">×</button></div>';
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 5000);
+        }
+
+        // Initialize
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Request notification permission
+        if ('Notification' in window && Notification.permission !== 'granted') {
+            Notification.requestPermission();
+        }
+    </script>
+</body>
+</html>
